@@ -1,3 +1,7 @@
+/* NOTE: In order for the app to work on Heroku
+    you must include a "start": "node app.js" in 
+    the package.json file under "scripts".
+
 /* The if statement below retrieves the information from 
     the .env file during development; but not during production. */
 if (process.env.NODE_ENV !== "production") {
@@ -175,6 +179,15 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error", { err });
 });
 
-app.listen(3000, () => {
-  console.log("You are listening on port 3000");
+
+// For local development, run on the following:
+// app.listen(3000, () => {
+//   console.log("You are listening on port 3000");
+// });
+
+// But for running on Heroku, use this:
+
+const port = process.env.PORT || 3000; // This will still use 3000 for local dev.
+app.listen(port, () => {
+  console.log(`Serving on Port ${port}!`);
 });
