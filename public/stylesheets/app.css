@@ -1,0 +1,69 @@
+body {
+    padding-top: 3rem;
+    /* height: 100vh; */
+}
+
+/* INDEX PAGE CONTENT */
+
+/* h1 on index.ejs */
+h1 {
+    padding-bottom: 30px;
+}
+
+/* Cluster Map on index.ejs */
+#cluster-map {
+    width: 100%;
+    height: 500px;
+}
+
+@media screen and (max-width: 767px) {
+    .cluster-map {
+        height: 400px !important;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .cluster-map {
+        height: 300px !important;
+    }
+}
+
+/* Campground Posts on index.ejs */
+#campground-post {
+    border: 1px solid rgb(189, 187, 187);
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+#campground-post:hover {
+    transform: translate3d(0px, -5px, 0px);
+    box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.605);
+    overflow: hidden;
+}
+
+
+/* SHOW PAGE CONTENT */
+
+/* Map on the show.ejs */
+#map {
+    width: 100%;
+    height: 300px;
+}
+
+@media screen and (max-width: 550px) {
+    #map {
+        margin: auto;
+        width: 100%;
+        padding-right: 3rem;
+    }
+}
+
+/* Contact Us Section on show.ejs */
+.contact-us {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    width: 100%;
+    z-index: 100;
+}
+
